@@ -1,6 +1,6 @@
 <template>
   <TheHeader />
-  <TodoForm />
+  <TodoForm @add-todo="addTodo" />
   <TodoContainer />
 </template>
 
@@ -8,7 +8,29 @@
 import TheHeader from "./components/TheHeader.vue";
 import TodoContainer from "./components/TodoContainer.vue";
 import TodoForm from "./components/TodoForm.vue";
-export default { components: { TheHeader, TodoContainer, TodoForm } };
+export default {
+  components: { TheHeader, TodoContainer, TodoForm },
+  data() {
+    return {
+      todos: [],
+    };
+  },
+  provide() {
+    return {
+      todos: this.todos,
+    };
+  },
+  methods: {
+    addTodo(description) {
+      const newTodo = {
+        id: new Date().toISOString(),
+        description,
+        isPrioritized: false,
+      };
+      this.todos.unshift(newTodo);
+    },
+  },
+};
 </script>
 
 <style>
@@ -30,6 +52,5 @@ section {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
-  text-align: center;
 }
 </style>

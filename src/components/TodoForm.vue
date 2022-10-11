@@ -1,15 +1,28 @@
 <template>
   <section>
-    <form>
+    <form @submit.prevent="addTodo(todo)">
       <h2>Add Todo</h2>
-      <input type="text" placeholder="Please enter a todo " />
+      <input type="text" placeholder="Please enter a todo" v-model="todo" />
       <button>Add Todo</button>
     </form>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  emits: ["add-todo"],
+  data() {
+    return {
+      todo: "",
+    };
+  },
+  methods: {
+    addTodo(newTodo) {
+      this.$emit("add-todo", newTodo);
+      this.todo = "";
+    },
+  },
+};
 </script>
 
 <style scoped>
