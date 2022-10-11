@@ -2,11 +2,13 @@
   <section>
     <h1>Todays Todos</h1>
     <hr />
+    <TodoList />
   </section>
 </template>
 
 <script>
-export default {};
+import TodoList from "./TodoList.vue";
+export default { components: { TodoList } };
 </script>
 
 <style scoped></style>
