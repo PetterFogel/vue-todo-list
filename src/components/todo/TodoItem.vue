@@ -1,11 +1,13 @@
 <template>
   <div>
     <h3>{{ todo.description }}</h3>
+    <button @click="deleteTodo(todo.id)">Delete</button>
   </div>
 </template>
 
 <script>
 export default {
+  inject: ["deleteTodo"],
   props: {
     todo: {
       id: {
