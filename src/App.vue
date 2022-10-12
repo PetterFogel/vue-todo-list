@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader.vue";
-import TodoContainer from "./components/TodoContainer.vue";
-import TodoForm from "./components/TodoForm.vue";
+import TheHeader from "./components/layout/TheHeader.vue";
+import TodoContainer from "./components/todo/TodoContainer.vue";
+import TodoForm from "./components/todo/TodoForm.vue";
 export default {
   components: { TheHeader, TodoContainer, TodoForm },
   data() {
