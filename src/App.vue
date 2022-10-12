@@ -1,35 +1,13 @@
 <template>
   <TheHeader />
-  <TodoForm @add-todo="addTodo" />
   <TodoContainer />
 </template>
 
 <script>
 import TheHeader from "./components/layout/TheHeader.vue";
 import TodoContainer from "./components/todo/TodoContainer.vue";
-import TodoForm from "./components/todo/TodoForm.vue";
 export default {
-  components: { TheHeader, TodoContainer, TodoForm },
-  data() {
-    return {
-      todos: [],
-    };
-  },
-  provide() {
-    return {
-      todos: this.todos,
-    };
-  },
-  methods: {
-    addTodo(description) {
-      const newTodo = {
-        id: new Date().toISOString(),
-        description,
-        isPrioritized: false,
-      };
-      this.todos.unshift(newTodo);
-    },
-  },
+  components: { TheHeader, TodoContainer },
 };
 </script>
 
