@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h3>{{ todo.description }}</h3>
-    <button @click="deleteTodo(todo.id)">Delete</button>
-  </div>
+  <section>
+    <div>
+      <h4>{{ todo.description }}</h4>
+      <button @click="deleteTodo(todo.id)">Delete</button>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -29,10 +31,20 @@ export default {
 
 <style scoped>
 div {
-  margin: 2rem auto;
-  max-width: 40rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  color: red;
 }
 </style>
