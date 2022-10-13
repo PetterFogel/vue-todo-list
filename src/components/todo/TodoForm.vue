@@ -3,6 +3,7 @@
     <form @submit.prevent="addTodo(todo)">
       <h2>Add Todo</h2>
       <input type="text" placeholder="Please enter a todo" v-model="todo" />
+      <p v-if="isInvalid">Field cannot be empty</p>
       <button>Add Todo</button>
     </form>
   </base-card>
@@ -14,11 +15,14 @@ export default {
   data() {
     return {
       todo: "",
+      isInvalid: false,
     };
   },
   methods: {
     addTodo(newTodo) {
+      if (newTodo === "") return (this.isInvalid = true);
       this.$emit("add-todo", newTodo);
+      this.isInvalid = false;
       this.todo = "";
     },
   },
@@ -52,5 +56,10 @@ button {
 }
 button:hover {
   background: #38813a;
+}
+
+p {
+  color: red;
+  margin-bottom: 1rem;
 }
 </style>
