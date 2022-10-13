@@ -1,11 +1,11 @@
 <template>
-  <section>
+  <base-card>
     <form @submit.prevent="addTodo(todo)">
       <h2>Add Todo</h2>
       <input type="text" placeholder="Please enter a todo" v-model="todo" />
       <button>Add Todo</button>
     </form>
-  </section>
+  </base-card>
 </template>
 
 <script>

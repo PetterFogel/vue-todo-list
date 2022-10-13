@@ -1,10 +1,11 @@
 <template>
-  <section>
+  <base-card>
     <div>
+      <input type="checkbox" />
       <h4>{{ todo.description }}</h4>
-      <button @click="deleteTodo(todo.id)">Delete</button>
     </div>
-  </section>
+    <button @click="deleteTodo(todo.id)">Delete</button>
+  </base-card>
 </template>
 
 <script>
@@ -34,6 +35,12 @@ div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+input {
+  margin-right: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 button {
