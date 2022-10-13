@@ -4,7 +4,7 @@
       <h2>Add Todo</h2>
       <input type="text" placeholder="Please enter a todo" v-model="todo" />
       <p v-if="isInvalid">Field cannot be empty</p>
-      <button>Add Todo</button>
+      <base-button mode="add-btn">Add Todo</base-button>
     </form>
   </base-card>
 </template>
@@ -41,21 +41,6 @@ input {
   font-size: 1.2rem;
   padding: 0.7rem;
   margin-bottom: 1rem;
-}
-
-button {
-  width: 100%;
-  font-size: 1.2rem;
-  padding: 0.7rem;
-  border-radius: 12px;
-  color: #fff;
-  background: #4caf50;
-  border: none;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-}
-button:hover {
-  background: #38813a;
 }
 
 p {
