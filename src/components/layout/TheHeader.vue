@@ -4,8 +4,6 @@
   </header>
 </template>
 
-<script></script>
-
 <style scoped>
 header {
   background: #4caf50;
