@@ -24,7 +24,7 @@ export default {
       const newTodo = {
         id: new Date().toISOString(),
         description,
-        isPrioritized: false,
+        isDone: false,
       };
       this.todos.unshift(newTodo);
     },
