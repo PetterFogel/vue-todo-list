@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.add-btn {
+.primary {
   width: 100%;
   font-size: 1.2rem;
   padding: 0.7rem;
@@ -28,11 +28,21 @@ export default {
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
-.add-btn:hover {
+.primary:hover {
   background: #38813a;
 }
 
-.delete-btn {
+.secondary {
+  font-size: 1rem;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 200ms ease-in-out;
+}
+
+.delete {
   border: none;
   background: transparent;
   font-size: 1rem;
@@ -40,7 +50,7 @@ export default {
   transition: all 200ms ease-in-out;
 }
 
-.delete-btn:hover {
+.delete:hover {
   color: red;
 }
 </style>
