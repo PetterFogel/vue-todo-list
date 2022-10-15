@@ -1,6 +1,11 @@
 <template>
   <base-card>
-    <h1>Todays Todos</h1>
+    <div class="header">
+      <h1>Todays Todos</h1>
+      <base-button mode="secondary" @click="$emit('open-modal')"
+        >Modal</base-button
+      >
+    </div>
     <hr />
     <h3 v-if="todos <= 0">Please add todays todos!</h3>
     <TransitionGroup name="todo-list">
@@ -13,11 +18,18 @@
 import TodoItem from "./TodoItem.vue";
 export default {
   inject: ["todos"],
+  emits: ["open-modal"],
   components: { TodoItem },
 };
 </script>
 
 <style scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 h3 {
   margin: 1rem 0rem;
 }

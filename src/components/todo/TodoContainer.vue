@@ -1,6 +1,7 @@
 <template>
   <TodoForm @add-todo="addTodo" />
-  <TodoList />
+  <TodoList @open-modal="openModal" />
+  <base-modal :open="isModalOpen" @closeModal="closeModal"></base-modal>
 </template>
 
 <script>
@@ -11,12 +12,14 @@ export default {
   data() {
     return {
       todos: [],
+      isModalOpen: false,
     };
   },
   provide() {
     return {
       todos: this.todos,
       deleteTodo: this.deleteTodo,
+      openModal: this.openModal,
     };
   },
   methods: {
@@ -31,6 +34,12 @@ export default {
     deleteTodo(todoId) {
       const todoIndex = this.todos.findIndex((todo) => todo.id === todoId);
       this.todos.splice(todoIndex, 1);
+    },
+    openModal() {
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
     },
   },
 };
