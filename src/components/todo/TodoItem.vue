@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <div>
-      <input type="checkbox" />
+      <input type="checkbox" id="isDone" name="isDone" v-model="isTodoDone" />
       <h4>{{ todo.description }}</h4>
     </div>
     <base-button mode="delete-btn" @click="deleteTodo(todo.id)"
@@ -23,11 +23,16 @@ export default {
         type: String,
         required: true,
       },
-      isPrioritized: {
+      isDone: {
         type: Boolean,
         required: true,
       },
     },
+  },
+  data() {
+    return {
+      isTodoDone: this.todo.isDone,
+    };
   },
 };
 </script>
